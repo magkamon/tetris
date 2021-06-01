@@ -18,8 +18,6 @@ Your task is to:
 
 1. Pick an issue that doesn't have an implementor yet. An implementor here
    is indicated in a comment, like "I'm working on this task.". 
-   * If there's no issue without an implementor, you can pick one of the
-     already picked. Just add another comment like above.
 1. **Fork the repository** (button in the upper right corner of the main page).
 1. **On the fork**, create a feature branch with a name following a convention:
    ```
@@ -61,13 +59,13 @@ NOT HERE, NOT IN YOUR LOCAL REPOSITORY.
    * acceptance criteria are not satisfied,
    * the code quality is insufficient,
    * the existing functionality is broken (also that not written by the author of PR).
-1. PRs will be accepted ASAP once we see they're really doing what they need to be
-   doing - that is, they can be merged with XYZ branch, safely, tests run, code compiles,
-   everything works, etc.
-1. If your task was done by someone else earlier, you have the following options:
+1. PRs will be accepted during the review session, once we see they're really doing what
+   they need to be doing - that is, they can be merged with XYZ branch, safely, tests run,
+   code compiles, everything works, etc.
+1. If there are no more tasks to take, you have the following options:
    1. Improve the already accepted solution, and create another PR.
-   1. Pick another task.
-   1. Propose a new functionality.
+   1. Search for a bug, and if such is found, report an issue and create a PR that fixes it.
+   1. Propose a new functionality (as an issue with a user story and criteria of acceptance).
    1. Do nothing - the task considered not done.
 1. If you're done with your task, you can take another one (and get additional points).
 1. Feel free to add missing tests and Javadocs for the existing functionality.
