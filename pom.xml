@@ -14,6 +14,10 @@
         <maven.compiler.target>16</maven.compiler.target>
         <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
         <testing>7.4.0</testing>
+        <test.jar.name>jar-test</test.jar.name>
+        <test.jar.folder.location>
+            ${project.build.directory}${file.separator}generated-test-sources${file.separator}test-jar
+        </test.jar.folder.location>
     </properties>
 
     <dependencies>
@@ -39,6 +43,25 @@
                         </manifest>
                     </archive>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>jar-creation-for-testing</id>
+                        <phase>generate-test-sources</phase>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
+                                </manifest>
+                            </archive>
+                            <outputDirectory>${test.jar.folder.location}</outputDirectory>
+                            <classifier>${test.jar.name}</classifier>
+                        </configuration>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
