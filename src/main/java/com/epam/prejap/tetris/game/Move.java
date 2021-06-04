@@ -5,6 +5,7 @@ public enum Move {
     NONE(' '),
     LEFT('h'),
     RIGHT('l'),
+    TO_BOTTOM_NOW('d') //todo: replace me!
     ;
 
     private final int key;

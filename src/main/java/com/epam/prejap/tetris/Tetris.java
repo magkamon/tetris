@@ -5,6 +5,7 @@ import com.epam.prejap.tetris.game.Move;
 import com.epam.prejap.tetris.game.Playfield;
 import com.epam.prejap.tetris.game.Printer;
 import com.epam.prejap.tetris.game.Waiter;
+import com.epam.prejap.tetris.player.HumanPlayer;
 import com.epam.prejap.tetris.player.Player;
 import com.epam.prejap.tetris.player.RandomPlayer;
 
@@ -38,6 +39,9 @@ class Tetris {
 
         } while (moved);
 
+        if (player instanceof HumanPlayer)
+            ((HumanPlayer) player).killHumanPlayer();
+
         return new Score(score);
     }
 
@@ -46,10 +50,14 @@ class Tetris {
         int cols = 20;
         int delay = 500;
 
+        Player player = new RandomPlayer();
+        if (args.length > 0 && args[0].equals("human"))
+            player = new HumanPlayer();
+
         var feed = new BlockFeed();
         var printer = new Printer(System.out);
         var playfield = new Playfield(rows, cols, feed, printer);
-        var game = new Tetris(playfield, new Waiter(delay), new RandomPlayer());
+        var game = new Tetris(playfield, new Waiter(delay), player);
 
         var score = game.play();
 
