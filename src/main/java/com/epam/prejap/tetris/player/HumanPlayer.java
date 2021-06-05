@@ -26,26 +26,37 @@ public class HumanPlayer implements Player, NativeKeyListener {
      */
     private static final Logger logger = LogManager.getLogger(HumanPlayer.class);
     private static final java.util.logging.Logger loggerNH = getLogger(GlobalScreen.class.getPackage().getName());
-    private final PrintStream originStream = System.out;
+    private static final PrintStream originStream = System.out;
 
-    //todo: implement a customizable key map for a user
+    /*
+     * todo: replace with a real key map provided by a user
+     */
     private static final int MOVE_RIGHT = 'l';
     private static final int MOVE_LEFT = 'h';
     private static final int MOVE_IMMEDIATELY_TO_BOTTOM = NativeKeyEvent.VC_DOWN;
 
+    /*
+     * Hold a state from user input
+     * @See nextMove()
+     */
     private int currentMovement;
 
     @Override
     public Optional<Move> nextMove() {
-        var result = switch (currentMovement) {
+        var result = mapMoveToKey(currentMovement);
+        logger.debug("nextMove is {}", result);
+        logger.debug("Value of currentMovement={}", currentMovement);
+        currentMovement = 0;
+        return Optional.of(result);
+    }
+
+    public Move mapMoveToKey(int key) {
+        return switch (key) {
             case MOVE_RIGHT -> Move.RIGHT;
             case MOVE_LEFT -> Move.LEFT;
             case MOVE_IMMEDIATELY_TO_BOTTOM -> Move.TO_BOTTOM_NOW;
             default -> Move.NONE;
         };
-        logger.debug("nextMove is {}", result);
-        logger.debug("Value of currentMovement={}", currentMovement);
-        return Optional.of(result);
     }
 
     /*
@@ -82,6 +93,8 @@ public class HumanPlayer implements Player, NativeKeyListener {
     @Override
     public void nativeKeyPressed(NativeKeyEvent nativeKeyEvent) {
         logger.info("I am pressed! {}", nativeKeyEvent.getKeyCode());
+        if (nativeKeyEvent.getKeyCode() == MOVE_IMMEDIATELY_TO_BOTTOM)
+            currentMovement = MOVE_IMMEDIATELY_TO_BOTTOM;
     }
 
     /*
@@ -101,9 +114,7 @@ public class HumanPlayer implements Player, NativeKeyListener {
         logger.info("I am Typed! char={}, code={}",
                 nativeKeyEvent.getKeyChar(),
                 nativeKeyEvent.getKeyCode());
-        if (nativeKeyEvent.getKeyCode() == MOVE_IMMEDIATELY_TO_BOTTOM)
-            currentMovement = MOVE_IMMEDIATELY_TO_BOTTOM;
-        else if (nativeKeyEvent.getKeyChar() == MOVE_RIGHT)
+        if (nativeKeyEvent.getKeyChar() == MOVE_RIGHT)
             currentMovement = MOVE_RIGHT;
         else if (nativeKeyEvent.getKeyChar() == MOVE_LEFT)
             currentMovement = MOVE_LEFT;

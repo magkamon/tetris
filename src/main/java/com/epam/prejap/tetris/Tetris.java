@@ -39,7 +39,6 @@ class Tetris {
             do {
                 waiter.waitForIt();
                 Move move = player.nextMove().orElse(Move.NONE);
-                logger.debug("MOVING");
                 moved |= (nextMove = playfield.move(move));
             } while (nextMove);
 
