@@ -13,13 +13,13 @@ import static org.testng.Assert.*;
 public class OBlockTest {
     OBlock oBlock = new OBlock();
 
-    public void numberOfYBlockRowsEqualsTwo(){
+    public void numberOfOBlockRowsEqualsTwo(){
         int actual = oBlock.rows();
         int expected = 2;
         assertEquals(actual, expected, "Number of rows is incorrect. Expected: " + expected + ", actual: " + actual);
     }
 
-    public void numberOfYBlockColsEqualsTwo(){
+    public void numberOfOBlockColsEqualsTwo(){
         int actual = oBlock.cols();
         int expected = 2;
         assertEquals(actual, expected, "Number of cols is incorrect. Expected: " + expected + ", actual: " + actual);
