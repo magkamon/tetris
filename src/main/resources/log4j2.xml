@@ -22,8 +22,13 @@
             <appender-ref ref="fileLogger" level="debug" />
         </Logger>
 
+        <Logger name="com.epam.prejap.tetris.player.HumanPlayer" level="debug" additivity="true">
+            <appender-ref ref="fileLogger" level="debug"/>
+        </Logger>
+
+
         <Root level="info" additivity="false">
-            <appender-ref ref="console" />
+            <appender-ref ref="fileLogger" />
         </Root>
     </Loggers>
 </Configuration>
