@@ -14,10 +14,14 @@
         <maven.compiler.target>16</maven.compiler.target>
         <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
         <testing>7.4.0</testing>
+        <main.class>com.epam.prejap.tetris.Tetris</main.class>
         <test.jar.name>jar-test</test.jar.name>
         <test.jar.folder.location>
             ${project.build.directory}${file.separator}generated-test-sources${file.separator}test-jar
         </test.jar.folder.location>
+        <test.jar.file.location>
+            ${test.jar.folder.location}${file.separator}${project.build.finalName}-${test.jar.name}.jar
+        </test.jar.file.location>
     </properties>
 
     <dependencies>
@@ -39,7 +43,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
+                            <mainClass>${main.class}</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -51,7 +55,7 @@
                             <archive>
                                 <manifest>
                                     <addClasspath>true</addClasspath>
-                                    <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
+                                    <mainClass>${main.class}</mainClass>
                                 </manifest>
                             </archive>
                             <outputDirectory>${test.jar.folder.location}</outputDirectory>
@@ -60,6 +64,24 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <id>create-properties-file</id>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>write-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <outputFile>${test.jar.folder.location}/properties-from-pom.properties</outputFile>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
