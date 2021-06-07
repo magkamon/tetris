@@ -5,7 +5,10 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertFalse;
 
-@Test
+/*
+ * @author: Radosław Piwowarski
+ */
+@Test(groups = "Playfield")
 public class TestPlayfield {
 
     /*
@@ -20,3 +23,4 @@ public class TestPlayfield {
         assertFalse(playfield.move(Move.TO_BOTTOM_NOW));
     }
 }
+

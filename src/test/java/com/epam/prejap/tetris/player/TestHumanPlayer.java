@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-@Test
+@Test(groups = {"HumanPlayerTest"})
 public class TestHumanPlayer {
 
 
