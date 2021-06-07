@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Group Test">
+    <test verbose="2" name="Tetris tests">
+        <groups>
+            <run>
+                <include name="rows"/>
+                <include name="cols"/>
+                <include name="dotAt"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.prejap.tetris.block.UBlockTest"/>
+        </classes>
+    </test>
+</suite>
