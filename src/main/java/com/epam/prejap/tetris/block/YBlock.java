@@ -1,11 +1,10 @@
 package com.epam.prejap.tetris.block;
 
 /**
- * @author Anna Silenko
- *
  *Represents Y block in BlockFeed
- * @see BlockFeed
  *
+ * @author Anna Silenko
+ * @see BlockFeed
  */
 final class YBlock extends Block {
 
@@ -18,5 +17,4 @@ final class YBlock extends Block {
     public YBlock() {
         super(IMAGE);
     }
-
 }
