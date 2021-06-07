@@ -10,7 +10,8 @@ public class BlockFeed {
     private final List<Supplier<Block>> blocks = List.of(
             OBlock::new,
             TBlock::new,
-            YBlock::new
+            YBlock::new,
+            IBlock::new
     );
 
     public BlockFeed() {
@@ -19,5 +20,4 @@ public class BlockFeed {
     public Block nextBlock() {
         return blocks.get(rnd.nextInt(blocks.size())).get();
     }
-
 }
