@@ -11,30 +11,30 @@ import java.util.jar.JarFile;
 
 import static org.testng.Assert.*;
 
-@Test
+@Test(groups = "jar")
 public class JARTest {
     private static final String MAIN_CLASS_FQN = Tetris.class.getName();
-    private static final String PROPERTIES_FILE = "target" + File.separator + "generated-test-sources" +
+    private static final String PROPERTIES_FILE = "target" + File.separator + "test-classes" +
             File.separator + "test-jar" + File.separator + "properties-from-pom.properties";
     private static final String JAR_PATH_PROPERTY = "test.jar.file.location";
 
     public void propertiesFileForJarTestsExists() {
         File file = new File(PROPERTIES_FILE);
-        assertTrue(file.exists());
+        assertTrue(file.exists(), "The file with properties does not exist or the path is wrong");
     }
 
     public void jarFileForTestingIsCreated() throws IOException {
         PropertiesReader reader = new PropertiesReader(PROPERTIES_FILE);
         String jarFilePath = reader.getProperty(JAR_PATH_PROPERTY);
         File file = new File(jarFilePath);
-        assertTrue(file.exists());
+        assertTrue(file.exists(), "The JAR file for tests was not created or the path is wrong");
     }
 
     public void jarFileForTestingHasManifestFile() throws IOException {
         PropertiesReader reader = new PropertiesReader(PROPERTIES_FILE);
         String jarFilePath = reader.getProperty(JAR_PATH_PROPERTY);
         JarFile file = new JarFile(jarFilePath);
-        assertNotNull(file.getManifest());
+        assertNotNull(file.getManifest(), "The MANIFEST.MF is not present in JAR file");
     }
 
     public void jarFileForTestingContainsCorrectMainClass() throws IOException {
@@ -44,7 +44,8 @@ public class JARTest {
         String mainClassFQN = file.getManifest()
                 .getMainAttributes()
                 .getValue("Main-Class");
-        assertEquals(mainClassFQN, MAIN_CLASS_FQN);
+        assertEquals(mainClassFQN, MAIN_CLASS_FQN,
+                "The fully qualified name of the class with method main() is not correct");
     }
 
     /**
