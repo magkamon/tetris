@@ -20,6 +20,7 @@
             <class name="com.epam.prejap.tetris.block.TBlockTest"/>
             <class name="com.epam.prejap.tetris.block.BlockShapesTest"/>
             <class name="com.epam.prejap.tetris.JARArchiveIT"/>
+            <class name="com.epam.prejap.tetris.block.YBlockTest"/>
         </classes>
     </test>
 </suite>
