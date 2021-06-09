@@ -12,58 +12,39 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
+        <version.log4j>2.14.1</version.log4j>
+        <version.jnativehook>2.0.2</version.jnativehook>
+        <version.testng>7.4.0</version.testng>
+        <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.4.0</version>
+            <version>${version.testng}</version>
             <scope>test</scope>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.1stleg/jnativehook -->
         <dependency>
             <groupId>com.1stleg</groupId>
             <artifactId>jnativehook</artifactId>
-            <version>2.0.2</version>
+            <version>${version.jnativehook}</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.14.1</version>
+            <version>${version.log4j}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.14.1</version>
+            <version>${version.log4j}</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
-                <executions>
-                    <execution>
-                        <phase>none</phase>
-                    </execution>
-                </executions>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-
-
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -75,24 +56,20 @@
                         <goals>
                             <goal>single</goal>
                         </goals>
-
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
+                                    <mainClass>${mainClass}</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
-                            <!--                            <finalName>tetris</finalName>-->
                             <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
-
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
-
 </project>
