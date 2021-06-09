@@ -43,7 +43,11 @@ public class Playfield {
                 case RIGHT -> moveRight();
                 case TO_BOTTOM_NOW -> moveToBottom();
             }
-        moved = moveDown();
+
+            if (move != Move.TO_BOTTOM_NOW)
+                moved = moveDown();
+            else
+                moved = true;
         show();
         return moved;
     }
