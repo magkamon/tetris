@@ -4,9 +4,7 @@
     <test verbose="2" name="Tetris tests">
         <groups>
             <run>
-                <include name="rows"/>
-                <include name="cols"/>
-                <include name="dotAt"/>
+                <include name="blockShape"/>
             </run>
         </groups>
         <classes>

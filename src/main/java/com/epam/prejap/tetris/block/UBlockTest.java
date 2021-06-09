@@ -10,21 +10,21 @@ public class UBlockTest {
 
     UBlock uBlock = new UBlock();
 
-    @Test(groups = {"rows"})
+    @Test(groups = {"blockShape"})
     public void shouldUBlockContainTwoRows() {
         int actualRows = uBlock.rows();
         int expectedRows = 2;
         assertEquals(actualRows, expectedRows, "Number of rows is incorrect, it should be: " + expectedRows + " when actual is: " + actualRows);
     }
 
-    @Test(groups = {"cols"})
+    @Test(groups = {"blockShape"})
     public void shouldUBlockContainThreeCols() {
         int actualCols = uBlock.cols();
         int expectedCols = 3;
         assertEquals(actualCols, expectedCols, "Number of cols is incorrect, it should be: " + expectedCols + " when actual is: " + actualCols);
     }
 
-    @Test(groups = {"dotAt"}, dataProvider = "dotsPlacement")
+    @Test(groups = {"blockShape"}, dataProvider = "dotsPlacement")
     public void shouldReturnCorrectDotPlace(int row, int cols, int expected, String message) {
         int actual = uBlock.dotAt(row, cols);
         assertEquals(actual, expected, message);
