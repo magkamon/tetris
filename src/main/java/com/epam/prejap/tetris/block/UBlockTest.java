@@ -5,26 +5,26 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-@Test
+@Test(groups = {"blockShape"})
 public class UBlockTest {
 
     UBlock uBlock = new UBlock();
 
-    @Test(groups = {"blockShape"})
+    @Test
     public void shouldUBlockContainTwoRows() {
         int actualRows = uBlock.rows();
         int expectedRows = 2;
         assertEquals(actualRows, expectedRows, "Number of rows is incorrect, it should be: " + expectedRows + " when actual is: " + actualRows);
     }
 
-    @Test(groups = {"blockShape"})
+    @Test
     public void shouldUBlockContainThreeCols() {
         int actualCols = uBlock.cols();
         int expectedCols = 3;
         assertEquals(actualCols, expectedCols, "Number of cols is incorrect, it should be: " + expectedCols + " when actual is: " + actualCols);
     }
 
-    @Test(groups = {"blockShape"}, dataProvider = "dotsPlacement")
+    @Test(dataProvider = "dotsPlacement")
     public void shouldReturnCorrectDotPlace(int row, int cols, int expected, String message) {
         int actual = uBlock.dotAt(row, cols);
         assertEquals(actual, expected, message);
