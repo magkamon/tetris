@@ -56,7 +56,7 @@ class Tetris {
         int delay = 500;
 
         Player player = new RandomPlayer();
-        if (args.length > 0 && args[0].equals("human"))
+        if (args.length > 0 && args[0].contains("human"))
             player = new HumanPlayer();
 
         var feed = new BlockFeed();
