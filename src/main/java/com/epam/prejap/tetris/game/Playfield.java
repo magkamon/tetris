@@ -35,16 +35,12 @@ public class Playfield {
     public boolean move(Move move) {
         hide();
         boolean moved;
-            switch (move) {
-                case LEFT -> moveLeft();
-                case RIGHT -> moveRight();
-                case TO_BOTTOM_NOW -> moveToBottom();
-            }
-
-            if (move != Move.TO_BOTTOM_NOW)
-                moved = moveDown();
-            else
-                moved = true;
+        switch (move) {
+            case LEFT -> moveLeft();
+            case RIGHT -> moveRight();
+            case TO_BOTTOM_NOW -> moveToBottom();
+        }
+        moved = moveDown();
         show();
         return moved;
     }

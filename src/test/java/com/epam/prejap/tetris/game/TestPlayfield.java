@@ -3,7 +3,7 @@ package com.epam.prejap.tetris.game;
 import com.epam.prejap.tetris.block.BlockFeed;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertFalse;
 
 /*
  * @author: Radosław Piwowarski
@@ -20,7 +20,7 @@ public class TestPlayfield {
         var printer = new Printer(System.out);
         var playfield = new Playfield(10, 20, feed, printer);
         playfield.nextBlock();
-        assertTrue(playfield.move(Move.TO_BOTTOM_NOW));
+        assertFalse(playfield.move(Move.TO_BOTTOM_NOW));
     }
 }
 

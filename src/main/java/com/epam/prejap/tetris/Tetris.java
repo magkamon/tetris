@@ -36,6 +36,10 @@ class Tetris {
                 waiter.waitForIt();
                 Move move = player.nextMove().orElse(Move.NONE);
                 moved |= (nextMove = playfield.move(move));
+                if (move == Move.TO_BOTTOM_NOW)
+                {
+                    moved = true;
+                }
             } while (nextMove);
 
         } while (moved);

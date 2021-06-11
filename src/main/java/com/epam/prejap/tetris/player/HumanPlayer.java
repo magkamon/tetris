@@ -24,7 +24,7 @@ public class HumanPlayer implements Player, NativeKeyListener {
     private int currentMovement;
 
     /*
-     * See parent class Player
+     * See interface Player
      */
     @Override
     public Optional<Move> nextMove() {
