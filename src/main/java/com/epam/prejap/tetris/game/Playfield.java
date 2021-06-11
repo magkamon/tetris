@@ -2,13 +2,10 @@ package com.epam.prejap.tetris.game;
 
 import com.epam.prejap.tetris.block.Block;
 import com.epam.prejap.tetris.block.BlockFeed;
-import org.apache.logging.log4j.Logger;
 
-import static org.apache.logging.log4j.LogManager.getLogger;
 
 public class Playfield {
 
-    private static final Logger logger = getLogger(Playfield.class);
 
     private final byte[][] grid;
     private final int rows;
@@ -57,12 +54,10 @@ public class Playfield {
      * @see isValidMove
      */
     private boolean moveToBottom() {
-        logger.debug("Jump to bottom!");
         int i = 1;
         while (isValidMove(block, i, 0)) {
             i++;
         }
-        logger.debug("Offset is {}", i);
         return move(i - 1, 0);
     }
 
@@ -96,8 +91,6 @@ public class Playfield {
                     int newRow = row + i + rowOffset;
                     int newCol = col + j + colOffset;
                     if (newRow >= rows || newCol >= cols || grid[newRow][newCol] > 0) {
-                        logger.debug("Move is invalid block={}, rowOffset={}, colOffset{}",
-                                block, rowOffset, colOffset);
                         return false;
                     }
                 }

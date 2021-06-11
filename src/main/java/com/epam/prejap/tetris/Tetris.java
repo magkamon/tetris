@@ -8,13 +8,9 @@ import com.epam.prejap.tetris.game.Waiter;
 import com.epam.prejap.tetris.player.HumanPlayer;
 import com.epam.prejap.tetris.player.Player;
 import com.epam.prejap.tetris.player.RandomPlayer;
-import org.apache.logging.log4j.Logger;
-
-import static org.apache.logging.log4j.LogManager.getLogger;
 
 class Tetris {
 
-    private static final Logger logger = getLogger(Tetris.class);
 
     private final Playfield playfield;
     private final Waiter waiter;

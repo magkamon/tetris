@@ -1,16 +1,11 @@
 package com.epam.prejap.tetris.game;
 
-import org.jnativehook.keyboard.NativeKeyEvent;
-
 public enum Move {
 
     NONE(' '),
     LEFT('h'),
     RIGHT('l'),
-    /*
-     * Arrow key down
-     */
-    TO_BOTTOM_NOW(NativeKeyEvent.VC_DOWN)
+    TO_BOTTOM_NOW('j')
     ;
 
     private final int key;
