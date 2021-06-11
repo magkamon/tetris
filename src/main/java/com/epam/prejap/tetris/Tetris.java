@@ -8,13 +8,9 @@ import com.epam.prejap.tetris.game.Waiter;
 import com.epam.prejap.tetris.player.HumanPlayer;
 import com.epam.prejap.tetris.player.Player;
 import com.epam.prejap.tetris.player.RandomPlayer;
-import org.apache.logging.log4j.Logger;
-
-import static org.apache.logging.log4j.LogManager.getLogger;
 
 class Tetris {
 
-    private static final Logger logger = getLogger(Tetris.class);
 
     private final Playfield playfield;
     private final Waiter waiter;
@@ -40,6 +36,10 @@ class Tetris {
                 waiter.waitForIt();
                 Move move = player.nextMove().orElse(Move.NONE);
                 moved |= (nextMove = playfield.move(move));
+                if (move == Move.TO_BOTTOM_NOW)
+                {
+                    moved = true;
+                }
             } while (nextMove);
 
         } while (moved);
@@ -56,7 +56,7 @@ class Tetris {
         int delay = 500;
 
         Player player = new RandomPlayer();
-        if (args.length > 0 && args[0].equals("human"))
+        if (args.length > 0 && args[0].contains("human"))
             player = new HumanPlayer();
 
         var feed = new BlockFeed();

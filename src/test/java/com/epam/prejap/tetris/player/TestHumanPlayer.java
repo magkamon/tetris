@@ -2,8 +2,6 @@ package com.epam.prejap.tetris.player;
 
 import com.epam.prejap.tetris.game.Move;
 import org.jnativehook.GlobalScreen;
-import org.jnativehook.keyboard.NativeKeyEvent;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -19,7 +17,7 @@ public class TestHumanPlayer {
                 {' ', Move.NONE},
                 {'h', Move.LEFT},
                 {'l', Move.RIGHT},
-                {NativeKeyEvent.VC_DOWN, Move.TO_BOTTOM_NOW}
+                {'j', Move.TO_BOTTOM_NOW}
         };
     }
 
