@@ -4,6 +4,10 @@
 <suite name="TestNG Group Test">
     <test verbose="2" name="Tetris tests">
         <groups>
+            <define name="all">
+                <include name="blockShapes"/>
+                <include name="blocks"/>
+            </define>
             <run>
                 <include name="blockShapes"/>
                 <include name="jar"/>

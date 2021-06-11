@@ -9,7 +9,7 @@ import static org.testng.Assert.*;
  * @author Anna Silenko
  */
 
-@Test(groups = {"blockShape"})
+@Test(groups = {"blockShapes", "blocks"})
 public class OBlockTest {
     OBlock oBlock = new OBlock();
 
