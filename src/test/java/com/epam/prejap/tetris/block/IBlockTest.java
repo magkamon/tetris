@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
  * @author Kanybek Mukalaev
  * This class methods of IBlock.
  */
-@Test
+@Test(groups = {"blockShapes"})
 public class IBlockTest {
     IBlock b = new IBlock();
     @DataProvider()
