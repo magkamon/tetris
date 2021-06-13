@@ -12,8 +12,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        <testng.version>7.4.0</testng.version>
-        <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
         <main.class>com.epam.prejap.tetris.Tetris</main.class>
         <test.jar.name>jar-test</test.jar.name>
         <test.jar.folder.location>
@@ -22,7 +20,9 @@
         <test.jar.file.location>
             ${test.jar.folder.location}${file.separator}${project.build.finalName}-${test.jar.name}.jar
         </test.jar.file.location>
-        <properties.maven.plugin>1.0.0</properties.maven.plugin>
+        <testng.version>7.4.0</testng.version>
+        <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
+        <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
     </properties>
 
     <dependencies>
@@ -72,7 +72,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
-                <version>${properties.maven.plugin}</version>
+                <version>${properties.maven.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>create-properties-file</id>
