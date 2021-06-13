@@ -9,7 +9,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.epam.prejap.tetris.JARTest"/>
+            <class name="com.epam.prejap.tetris.JARArchiveIT"/>
         </classes>
     </test>
 </suite>

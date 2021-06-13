@@ -12,10 +12,10 @@ import java.util.jar.JarFile;
 import static org.testng.Assert.*;
 
 @Test(groups = "jar")
-public class JARTest {
+public class JARArchiveIT {
     private static final String MAIN_CLASS_FQN = Tetris.class.getName();
     private static final String PROPERTIES_FILE = "target" + File.separator + "test-classes" +
-            File.separator + "test-jar" + File.separator + "properties-from-pom.properties";
+            File.separator + "properties-from-pom.properties";
     private static final String JAR_PATH_PROPERTY = "test.jar.file.location";
 
     public void propertiesFileForJarTestsExists() {
