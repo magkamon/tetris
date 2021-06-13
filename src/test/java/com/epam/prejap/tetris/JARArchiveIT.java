@@ -11,6 +11,11 @@ import java.util.jar.JarFile;
 
 import static org.testng.Assert.*;
 
+/**
+ * Integration tests that check whether JAR archive was correctly created.
+ * The class gets correct JAR file name from properties extracted from <b>pom.xml</b> with
+ * <b>properties-maven-plugin</b>.
+ */
 @Test(groups = "jar")
 public class JARArchiveIT {
     private static final String MAIN_CLASS_FQN = Tetris.class.getName();

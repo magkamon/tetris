@@ -70,6 +70,7 @@
                 </executions>
             </plugin>
 
+            <!--See src/test/java/com/epam/prejap/tetris/JARArchiveIT for why we need this-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
