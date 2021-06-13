@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-@Test(groups = {"blockShape"})
+@Test(groups = {"blockShapes"})
 public class UBlockTest {
 
     UBlock uBlock = new UBlock();
