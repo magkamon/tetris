@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-@Test(groups = "blockShapes")
+@Test(groups = {"blockShapes", "blocks"})
 public class TBlockTest {
 
     TBlock tBlock = new TBlock();
