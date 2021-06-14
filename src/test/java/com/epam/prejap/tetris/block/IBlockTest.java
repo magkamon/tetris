@@ -14,21 +14,6 @@ import static org.testng.Assert.assertEquals;
 @Test(groups = {"blockShapes"})
 public class IBlockTest {
     IBlock b;
-    @DataProvider()
-    public static Object[][] IBlock() {
-        byte[][] IBlock = {
-                {1},
-                {1},
-                {1},
-                {1},
-        };
-        return new Object[][] {IBlock};
-    }
-    @Test(dataProvider = "IBlock")
-    public void checkIBlockShapeOfTetris(byte[][] expectedResult){
-        byte [][] actualResult = IBlock.image;
-        assertEquals(actualResult, expectedResult);
-    }
     public void checkRowOfIBlock(){
         b = new IBlock();
         int actualResult = b.rows();
