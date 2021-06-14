@@ -11,13 +11,13 @@ package com.epam.prejap.tetris.block;
  *
  */
 class IBlock extends Block {
-    static final byte [][] image = {
+    private static final byte [][] IMAGE = {
             {1},
             {1},
             {1},
             {1},
     };
     public IBlock(){
-        super(image);
+        super(IMAGE);
     }
 }
