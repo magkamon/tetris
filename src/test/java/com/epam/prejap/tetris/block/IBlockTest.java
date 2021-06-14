@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
  *
  */
 
-@Test(groups = {"blockShapes"})
+@Test(groups = {"blockShapes", "blocks"})
 public class IBlockTest {
     IBlock b;
     public void checkRowOfIBlock(){
