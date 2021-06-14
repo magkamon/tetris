@@ -1,16 +1,19 @@
 package com.epam.prejap.tetris.block;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
+
 /**
+ *
  * @author Kanybek Mukalaev
- * This class methods of IBlock.
+ *
  */
+
 @Test(groups = {"blockShapes"})
 public class IBlockTest {
-    IBlock b = new IBlock();
+    IBlock b;
     @DataProvider()
     public static Object[][] IBlock() {
         byte[][] IBlock = {
@@ -22,24 +25,27 @@ public class IBlockTest {
         return new Object[][] {IBlock};
     }
     @Test(dataProvider = "IBlock")
-    public void checkBlockIOfTetris(byte[][] expectedResult){
+    public void checkIBlockShapeOfTetris(byte[][] expectedResult){
         byte [][] actualResult = IBlock.image;
-        Assert.assertEquals(actualResult, expectedResult);
+        assertEquals(actualResult, expectedResult);
     }
     public void checkRowOfIBlock(){
+        b = new IBlock();
         int actualResult = b.rows();
         int expectedResult = 4;
-        Assert.assertEquals(actualResult, expectedResult, "We check here I block and row is more than 3");
+        assertEquals(actualResult, expectedResult, "We expected 4, but get " + actualResult);
     }
     public void checkColumnOfIBlock(){
+        b = new IBlock();
         int actualResult = b.cols();
         int expectedResult = 1;
-        Assert.assertEquals(actualResult, expectedResult, "We check here I block column and it is less than 3");
+        assertEquals(actualResult, expectedResult, "We expected 1, but get " + actualResult);
     }
     @Test(dataProvider = "checkDotAtIBlock")
     public void checkDotAtOfIBlock(int i, int j, int expectedResult){
+        b = new IBlock();
         int actualResult = b.dotAt(i, j);
-        Assert.assertEquals(actualResult, expectedResult);
+        assertEquals(actualResult, expectedResult);
     }
     @DataProvider()
     public static Object[][] checkDotAtIBlock(){
