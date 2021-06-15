@@ -14,6 +14,7 @@
         <maven.compiler.target>16</maven.compiler.target>
         <version.jnativehook>2.0.2</version.jnativehook>
         <version.testng>7.4.0</version.testng>
+        <version.maven.assembly.plugin>3.3.0</version.maven.assembly.plugin>
         <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
     </properties>
 
@@ -37,7 +38,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>${version.maven.assembly.plugin}</version>
                 <executions>
                     <execution>
                         <id>make-assembly</id>
