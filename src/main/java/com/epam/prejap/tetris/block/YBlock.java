@@ -1,7 +1,7 @@
 package com.epam.prejap.tetris.block;
 
 /**
- * Represents Y block in BlockFeed
+ * Represents Y block in BlockFeed.
  *
  * @author Anna Silenko
  * @see BlockFeed
