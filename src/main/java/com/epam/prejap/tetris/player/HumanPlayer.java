@@ -24,7 +24,7 @@ public class HumanPlayer implements Player, NativeKeyListener {
     private int currentMovement;
 
     /*
-     * See interface Player
+     * @See interface Player
      */
     @Override
     public Optional<Move> nextMove() {
@@ -45,7 +45,7 @@ public class HumanPlayer implements Player, NativeKeyListener {
      * @See GlobalScreen
      */
     public HumanPlayer() {
-        var loggerNH = getLogger(GlobalScreen.class.getPackage().getName()); // just to suspend
+        var loggerNH = getLogger(GlobalScreen.class.getPackage().getName()); // just to suspend spammer
         var originStream = System.out;
         try {
             loggerNH.setLevel(Level.OFF); // disable spam from JNativeHook
