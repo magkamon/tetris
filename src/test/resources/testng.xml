@@ -7,9 +7,11 @@
             <define name="all">
                 <include name="blockShapes"/>
                 <include name="blocks"/>
+                <include name="jar"/>
             </define>
             <run>
                 <include name="blockShapes"/>
+                <include name="blocks"/>
                 <include name="jar"/>
             </run>
         </groups>
