@@ -12,22 +12,22 @@ public class UBlockTest {
 
     @Test
     public void shouldUBlockContainTwoRows() {
-        int actualRows = uBlock.rows();
-        int expectedRows = 2;
-        assertEquals(actualRows, expectedRows, "Number of rows is incorrect, it should be: " + expectedRows + " when actual is: " + actualRows);
+        int allUBlockRows = uBlock.rows();
+        int rows2 = 2;
+        assertEquals(allUBlockRows, rows2, "Number of rows is incorrect, it should be: " + rows2 + " when actual is: " + allUBlockRows);
     }
 
     @Test
     public void shouldUBlockContainThreeCols() {
-        int actualCols = uBlock.cols();
-        int expectedCols = 3;
-        assertEquals(actualCols, expectedCols, "Number of cols is incorrect, it should be: " + expectedCols + " when actual is: " + actualCols);
+        int allUBlockCols = uBlock.cols();
+        int cols3 = 3;
+        assertEquals(allUBlockCols, cols3, "Number of cols is incorrect, it should be: " + cols3 + " when actual is: " + allUBlockCols);
     }
 
     @Test(dataProvider = "dotsPlacement")
-    public void shouldReturnCorrectDotPlace(int row, int cols, int expected, String message) {
-        int actual = uBlock.dotAt(row, cols);
-        assertEquals(actual, expected, message);
+    public void shouldReturnCorrectDotPlace(int row, int col, int expectedDotPlacement, String message) {
+        int uBlockDotPlacement = uBlock.dotAt(row, col);
+        assertEquals(uBlockDotPlacement, expectedDotPlacement, message);
     }
 
     @DataProvider
