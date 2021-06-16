@@ -17,6 +17,7 @@
         <version.maven.assembly.plugin>3.3.0</version.maven.assembly.plugin>
         <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
         <main.class>com.epam.prejap.tetris.Tetris</main.class>
+        <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
         <test.jar.file.location>
             ${project.build.directory}${file.separator}${project.build.finalName}.jar
         </test.jar.file.location>
@@ -26,7 +27,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
+            <version>${version.testng}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.1stleg/jnativehook -->

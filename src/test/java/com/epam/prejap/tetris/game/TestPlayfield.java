@@ -52,7 +52,7 @@ public class TestPlayfield {
      * Direct position checking is not possible, grid is private.
      */
     @Test(dataProvider = "provideNumberOfMovesAndExceptedResults")
-    public void testMoveLeftSide(int move, boolean endEffect, Move side) throws IndexOutOfBoundsException {
+    public void testMoveLeftSide(int move, boolean endEffect, Move side) throws ArrayIndexOutOfBoundsException {
         playfield.nextBlock();
         boolean moved = false;
         for (int i = 0; i < move; i++) {
