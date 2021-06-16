@@ -13,6 +13,7 @@
         </groups>
         <classes>
             <class name="com.epam.prejap.tetris.block.BlockShapesTest"/>
+            <class name="com.epam.prejap.tetris.block.BlocksShapesTest"/>
         </classes>
     </test>
     <test verbose="2" name="jar tests">
