@@ -11,24 +11,26 @@ import static org.testng.Assert.assertEquals;
  *
  */
 
-@Test(groups = {"blockShapes", "blocks"})
+@Test(groups = {"blockShapes"})
 public class IBlockTest {
-    IBlock b;
+
     public void checkRowOfIBlock(){
-        b = new IBlock();
+        IBlock b = new IBlock();
         int actualResult = b.rows();
         int expectedResult = 4;
-        assertEquals(actualResult, expectedResult, "We expected 4, but get " + actualResult);
+        assertEquals(actualResult, expectedResult,
+                String.format("We expected %d, but get %d",expectedResult, actualResult));
     }
     public void checkColumnOfIBlock(){
-        b = new IBlock();
+        IBlock b  = new IBlock();
         int actualResult = b.cols();
         int expectedResult = 1;
-        assertEquals(actualResult, expectedResult, "We expected 1, but get " + actualResult);
+        assertEquals(actualResult, expectedResult,
+                String.format("We expected %d, but get %d",expectedResult, actualResult));
     }
     @Test(dataProvider = "checkDotAtIBlock")
     public void checkDotAtOfIBlock(int i, int j, int expectedResult){
-        b = new IBlock();
+        IBlock b  = new IBlock();
         int actualResult = b.dotAt(i, j);
         assertEquals(actualResult, expectedResult);
     }
