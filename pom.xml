@@ -28,6 +28,8 @@
         <maven.assembly.plugin.version>3.3.0</maven.assembly.plugin.version>
         <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
         <testng.version>7.4.0</testng.version>
+        <tinylog.api.version>2.3.2</tinylog.api.version>
+        <tinylog.impl.version>2.3.2</tinylog.impl.version>
     </properties>
 
     <dependencies>
@@ -48,6 +50,16 @@
             <groupId>com.1stleg</groupId>
             <artifactId>jnativehook</artifactId>
             <version>${jnativehook.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinylog</groupId>
+            <artifactId>tinylog-api</artifactId>
+            <version>${tinylog.api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tinylog</groupId>
+            <artifactId>tinylog-impl</artifactId>
+            <version>${tinylog.impl.version}</version>
         </dependency>
     </dependencies>
 
