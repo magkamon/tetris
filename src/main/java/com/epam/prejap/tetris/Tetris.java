@@ -10,8 +10,6 @@ import com.epam.prejap.tetris.player.Player;
 import com.epam.prejap.tetris.player.RandomPlayer;
 
 class Tetris {
-
-
     private final Playfield playfield;
     private final Waiter waiter;
     private final Player player;
@@ -36,8 +34,7 @@ class Tetris {
                 waiter.waitForIt();
                 Move move = player.nextMove().orElse(Move.NONE);
                 moved |= (nextMove = playfield.move(move));
-                if (move == Move.TO_BOTTOM_NOW)
-                {
+                if (move == Move.TO_BOTTOM_NOW) {
                     moved = true;
                 }
             } while (nextMove);
@@ -68,5 +65,4 @@ class Tetris {
 
         System.out.println("Score: " + score.points());
     }
-
 }

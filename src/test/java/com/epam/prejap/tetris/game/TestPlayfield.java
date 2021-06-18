@@ -9,9 +9,9 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 
 /*
- * @author: Radosław Piwowarski
+ * @author Radosław Piwowarski
  */
-@Test(groups = {"Playfield"})
+@Test(groups = {"TestPlayfieldAndHumanPlayer"})
 public class TestPlayfield {
 
     /*
@@ -65,6 +65,4 @@ public class TestPlayfield {
         playfield.nextBlock();
         assertFalse(playfield.move(Move.TO_BOTTOM_NOW));
     }
-
 }
-

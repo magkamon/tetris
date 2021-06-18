@@ -18,49 +18,43 @@ import static java.util.logging.Logger.getLogger;
  */
 public class HumanPlayer implements Player, NativeKeyListener {
     /*
-     * Hold a state from user input
-     * @See nextMove()
+     * @see nextMove()
      */
     private int currentMovement;
 
     /*
-     * @See interface Player
+     * @see interface Player
      */
     @Override
     public Optional<Move> nextMove() {
         var result = mapMoveToKey(currentMovement);
-        System.out.printf("Current movement is %s%n", currentMovement);
         currentMovement = 0;
         return Optional.of(result);
     }
-    /*
-     * Mainly for testing purpose
-     */
-    public Move mapMoveToKey(int key) {
+
+    Move mapMoveToKey(int key) {
         return Move.of(key);
     }
 
     /*
      * Instantiate a new <code>HumanPlayer</code> object with a native hook
-     * @See GlobalScreen
+     * @see GlobalScreen
      */
     public HumanPlayer() {
         var loggerNH = getLogger(GlobalScreen.class.getPackage().getName()); // just to suspend spammer
-        var originStream = System.out;
         try {
             loggerNH.setLevel(Level.OFF); // disable spam from JNativeHook
-            System.setOut(null);
             GlobalScreen.registerNativeHook();
             GlobalScreen.addNativeKeyListener(this);
         } catch (NativeHookException e) {
             System.err.println("Count not register native hook!");
-        } finally {
-            System.setOut(originStream);  //Restore sout
         }
     }
 
     /*
      * Release hook from register
+     * HumanPlayer can not take any action without registered hook, so
+     * instance is as good as dead
      */
     public void killHumanPlayer() {
         try {

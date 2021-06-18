@@ -78,4 +78,5 @@ NOT HERE, NOT IN YOUR LOCAL REPOSITORY.
 
 
 ## This project relays on 3rd-party libraries: 
-- JNativeHook https://github.com/kwhat/jnativehook (to capture input)
+- JNativeHook version 2.0.2. Library responsible for capturing native input events: keystrokes.
+  https://github.com/kwhat/jnativehook
