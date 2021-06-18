@@ -75,3 +75,7 @@ NOT HERE, NOT IN YOUR LOCAL REPOSITORY.
 1. Every successfully merged PR is worth 10 points.
 1. Every new, passing and meaningful test is worth 1 point.
 1. Every added and meaningful Javadoc is worth 1 point.
+
+
+## This project relays on 3rd-party libraries: 
+- JNativeHook https://github.com/kwhat/jnativehook (to capture input)
