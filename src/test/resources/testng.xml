@@ -18,6 +18,7 @@
         <classes>
             <class name="com.epam.prejap.tetris.block.OBlockTest"/>
             <class name="com.epam.prejap.tetris.block.TBlockTest"/>
+            <class name="com.epam.prejap.tetris.block.BlockShapesTest"/>
             <class name="com.epam.prejap.tetris.JARArchiveIT"/>
         </classes>
     </test>
