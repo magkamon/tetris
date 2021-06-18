@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-package com.epam.prejap.tetris.block;/**
-@author Anna Silenko
-*/public class YBlock {
-=======
 package com.epam.prejap.tetris.block;
 
 /**
@@ -22,5 +17,4 @@ final class YBlock extends Block {
     public YBlock() {
         super(IMAGE);
     }
->>>>>>> f05a77c (correct javadoc and version)
 }

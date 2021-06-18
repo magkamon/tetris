@@ -10,6 +10,7 @@ public class BlockFeed {
     private final List<Supplier<Block>> blocks = List.of(
             OBlock::new,
             TBlock::new,
+            YBlock::new,
             SBlock::new
     );
 
