@@ -49,6 +49,23 @@ public class BlocksShapesTest {
 
     @DataProvider
     public static Object[][] blocks() {
+        HBlock hBlock = new HBlock();
+        int actualRowsForHBlock = hBlock.rows();
+        int expectedRowsForHBlock = 3;
+        int actualColsForHBlock = hBlock.cols();
+        int expectedColsForHBlock = 3;
+        var hBlockDotRepresentation = new Object[][]{
+                {hBlock.dotAt(0, 0), 1, "incorrect dotAt(0, 0)"},
+                {hBlock.dotAt(0, 1), 0, "incorrect dotAt(0, 1)"},
+                {hBlock.dotAt(0, 2), 1, "incorrect dotAt(0, 2)"},
+                {hBlock.dotAt(1, 0), 1, "incorrect dotAt(1, 0)"},
+                {hBlock.dotAt(1, 1), 1, "incorrect dotAt(1, 1)"},
+                {hBlock.dotAt(1, 2), 1, "incorrect dotAt(1, 2)"},
+                {hBlock.dotAt(2, 0), 1, "incorrect dotAt(2, 0)"},
+                {hBlock.dotAt(2, 1), 0, "incorrect dotAt(2, 1)"},
+                {hBlock.dotAt(2, 2), 1, "incorrect dotAt(2, 1)"}
+        };
+
         OBlock oBlock = new OBlock();
         int actualRowsForOBlock = oBlock.rows();
         int expectedRowsForOBlock = 2;
@@ -93,6 +110,7 @@ public class BlocksShapesTest {
         };
 
         return new Object[][]{
+                {"Tests for HBlock ", actualRowsForHBlock, expectedRowsForHBlock, actualColsForHBlock, expectedColsForHBlock, hBlockDotRepresentation},
                 {"Tests for OBlock ", actualRowsForOBlock, expectedRowsForOBlock, actualColsForOBlock, expectedColsForOBlock, oBlockDotRepresentation},
                 {"Tests for TBlock ", actualRowsForTBlock, expectedRowsForTBlock, actualColsForTBlock, expectedColsForTBlock, TBlockDotRepresentation},
                 {"Tests for YBlock ", actualRowsForYBlock, expectedRowsForYBlock, actualColsForYBlock, expectedColsForYBlock, YBlockDotRepresentation}
