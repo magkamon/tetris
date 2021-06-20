@@ -17,9 +17,6 @@ import static org.testng.Assert.assertTrue;
 @Test(groups = {"TestPlayfieldAndHumanPlayer"})
 public class TestPlayfield {
 
-    BlockFeed feed;
-    Printer printer;
-    Playfield playfield;
     private static final int rows = 10;
     private static final int cols = 20;
     /*
@@ -27,16 +24,19 @@ public class TestPlayfield {
      * and therefore its not possible to access and calculate the value.
      */
     private static final int magicNumberOfMoves = cols / 4;
+    BlockFeed feed;
+    Printer printer;
+    Playfield playfield;
+
+    private static Object[][] helpProvider(Move move) {
+        return IntStream.range(1, cols / 4).boxed().map(i -> new Object[]{i, move}).toArray(Object[][]::new);
+    }
 
     @BeforeMethod
     public void initializePlayfield() {
         feed = new BlockFeed();
         printer = new Printer(System.out);
         playfield = new Playfield(rows, cols, feed, printer);
-    }
-
-    private static Object[][] helpProvider(Move move) {
-        return        IntStream.range(1, cols / 4).boxed().map(i -> new Object[]{i, move}).toArray(Object[][]::new);
     }
 
     @DataProvider

@@ -15,6 +15,7 @@ import static org.testng.Assert.*;
  */
 @Test(groups = {"TestPlayfieldAndHumanPlayer"})
 public class TestHumanPlayer {
+
     private static final Map<Character, Move> acceptedKeys = Map.of(
             ' ', Move.NONE, 'h', Move.LEFT, 'l', Move.RIGHT, 'j', Move.TO_BOTTOM_NOW);
 
@@ -33,7 +34,7 @@ public class TestHumanPlayer {
     @DataProvider
     public Object[][] provideKeysExpectedToNotCauseAnyMovement() {
         return IntStream.rangeClosed('a', 'z').boxed()
-                .filter(acceptedKeys::containsKey).map(x -> new Object[] {x}).toArray(Object[][]::new);
+                .filter(acceptedKeys::containsKey).map(x -> new Object[]{x}).toArray(Object[][]::new);
     }
 
     @Test(dataProvider = "provideKeysExpectedToNotCauseAnyMovement")

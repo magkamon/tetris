@@ -37,6 +37,7 @@ import static java.util.logging.Logger.getLogger;
  * @see Player
  */
 public class HumanPlayer implements Player, NativeKeyListener {
+
     /**
      * @see HumanPlayer#nextMove()
      */
@@ -44,6 +45,7 @@ public class HumanPlayer implements Player, NativeKeyListener {
 
     /**
      * Instantiate a new <code>HumanPlayer</code> object with a native hook
+     *
      * @see GlobalScreen
      * @see <a href="https://github.com/kwhat/jnativehook/blob/2.2/doc/ConsoleOutput.md">ConsoleOutput</a>
      * for how-to suspend verbose logger
@@ -60,8 +62,8 @@ public class HumanPlayer implements Player, NativeKeyListener {
     }
 
     /**
-     * @see Player#nextMove()
      * @return Optional of next Move
+     * @see Player#nextMove()
      */
     @Override
     public Optional<Move> nextMove() {
