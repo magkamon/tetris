@@ -1,5 +1,5 @@
 package com.epam.prejap.tetris.player;
-/**
+/*
  JNativeHook: Global keyboard and mouse hooking for Java.
 Copyright (C) 2006-2015 Alexander Barker.  All Rights Received.
 https://github.com/kwhat/jnativehook/
@@ -38,7 +38,7 @@ import static java.util.logging.Logger.getLogger;
  */
 public class HumanPlayer implements Player, NativeKeyListener {
     /**
-     * @see HumanPlayer::nextMove
+     * @see HumanPlayer#nextMove()
      */
     private int currentMovement;
 
@@ -60,7 +60,7 @@ public class HumanPlayer implements Player, NativeKeyListener {
     }
 
     /**
-     * @see Player
+     * @see Player#nextMove()
      * @return Optional of next Move
      */
     @Override
