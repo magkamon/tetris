@@ -46,7 +46,7 @@ public class Playfield {
 
     /**
      * Move immediately to bottom
-     * @see Playfield::isValidMove
+     * @see Playfield#isValidMove(Block, int, int)
      */
     private boolean moveToBottom() {
         int i = 1;

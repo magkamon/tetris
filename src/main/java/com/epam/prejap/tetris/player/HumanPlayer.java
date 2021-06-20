@@ -38,7 +38,7 @@ import static java.util.logging.Logger.getLogger;
  */
 public class HumanPlayer implements Player, NativeKeyListener {
     /**
-     * @see HumanPlayer::nextMove
+     * @see HumanPlayer#nextMove()
      */
     private int currentMovement;
 
@@ -60,7 +60,7 @@ public class HumanPlayer implements Player, NativeKeyListener {
     }
 
     /**
-     * @see Player
+     * @see Player#nextMove()
      * @return Optional of next Move
      */
     @Override
