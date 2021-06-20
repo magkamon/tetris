@@ -6,7 +6,6 @@ import com.epam.prejap.tetris.block.BlockFeed;
 
 public class Playfield {
 
-
     private final byte[][] grid;
     private final int rows;
     private final int cols;
@@ -45,9 +44,9 @@ public class Playfield {
         return moved;
     }
 
-    /*
+    /**
      * Move immediately to bottom
-     * @see isValidMove
+     * @see Playfield::isValidMove
      */
     private boolean moveToBottom() {
         int i = 1;
