@@ -1,7 +1,7 @@
 package com.epam.prejap.tetris.block;
 
 /**
- * The UBlock class stands for "U" Block in Tetris game
+ * Stands for "U" Block in Tetris game
  *
  * @author Magdalena Kamoń
  * @see BlockFeed
