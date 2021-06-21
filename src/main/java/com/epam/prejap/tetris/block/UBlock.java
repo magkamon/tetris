@@ -2,7 +2,6 @@ package com.epam.prejap.tetris.block;
 
 /**
  * Stands for "U" Block in Tetris game
- *
  * @author Magdalena Kamoń
  * @see BlockFeed
  */
