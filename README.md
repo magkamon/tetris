@@ -79,3 +79,4 @@ NOT HERE, NOT IN YOUR LOCAL REPOSITORY.
 
 ## License
 Project is distributed under GNU Lesser General Public license.
+License may be changed in a future if all dependencies distributed under GNU LGP license were removed.
