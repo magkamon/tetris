@@ -14,26 +14,6 @@ public class BlocksShapesTest {
     private final int colsExpected;
     private final Object[][] shape;
 
-    public void numberOfEveryBlockShapeRowsAsExpected() {
-        assertEquals(block.rows(), rowsExpected,
-                String.format("Number of rows for %s is incorrect.", block.getClass().getSimpleName()));
-    }
-
-    public void numberOfEveryBlockShapeColsAsExpected() {
-        assertEquals(block.cols(), colsExpected,
-                String.format("Number of columns for %s is incorrect.", block.getClass().getSimpleName()));
-    }
-
-    @Test(dataProvider = "shapeDots")
-    public void blocksDotAtReturnsCorrectValue(int i, int j, int expected) {
-        assertEquals(block.dotAt(i, j), (byte) expected,
-                String.format("%s incorrect dotAt(%s, %s)", block.getClass().getSimpleName(), i, j));
-    }
-
-    @DataProvider
-    public Object[][] shapeDots() {
-        return shape;
-    }
 
     @Factory(dataProvider = "blocks")
     public BlocksShapesTest(Block block, int rowsExpected, int colsExpected, Object[][] shape) {
@@ -51,6 +31,11 @@ public class BlocksShapesTest {
                 createTestTBlockObject(),
                 createTestYBlockObject()
         };
+    }
+
+    @DataProvider
+    public Object[][] shapeDots() {
+        return shape;
     }
 
     private static Object[] createTestHBlockObject() {
@@ -111,5 +96,21 @@ public class BlocksShapesTest {
 
     private static Object[] createTestBlockObject(Block block, int rowsExpected, int colsExpected, Object[][] shape) {
         return new Object[]{block, rowsExpected, colsExpected, shape};
+    }
+
+    public void numberOfEveryBlockShapeRowsAsExpected() {
+        assertEquals(block.rows(), rowsExpected,
+                String.format("Number of rows for %s is incorrect.", block.getClass().getSimpleName()));
+    }
+
+    public void numberOfEveryBlockShapeColsAsExpected() {
+        assertEquals(block.cols(), colsExpected,
+                String.format("Number of columns for %s is incorrect.", block.getClass().getSimpleName()));
+    }
+
+    @Test(dataProvider = "shapeDots")
+    public void blocksDotAtReturnsCorrectValue(int i, int j, int expected) {
+        assertEquals(block.dotAt(i, j), (byte) expected,
+                String.format("%s incorrect dotAt(%s, %s)", block.getClass().getSimpleName(), i, j));
     }
 }
