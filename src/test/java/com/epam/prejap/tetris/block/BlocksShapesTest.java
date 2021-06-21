@@ -27,6 +27,7 @@ public class BlocksShapesTest {
     public static Object[][] blocks() {
         return new Object[][]{
                 createTestHBlockObject(),
+                createTestIBlockObject(),
                 createTestOBlockObject(),
                 createTestTBlockObject(),
                 createTestYBlockObject()
@@ -53,6 +54,16 @@ public class BlocksShapesTest {
         return createTestBlockObject(new HBlock(), 3, 3, shape);
     }
 
+    private static Object[] createTestIBlockObject() {
+        var shape = new Object[][]{
+                createTestDotObject(0, 0, 1),
+                createTestDotObject(1, 0, 1),
+                createTestDotObject(2, 0, 1),
+                createTestDotObject(3, 0, 1)
+        };
+        return createTestBlockObject(new IBlock(), 4, 1, shape); 
+    }
+    
     private static Object[] createTestOBlockObject() {
         var shape = new Object[][]{
                 createTestDotObject(0, 0, 1),
