@@ -24,9 +24,9 @@ public class TestPlayfield {
      * and therefore its not possible to access and calculate the value.
      */
     private static final int magicNumberOfMoves = cols / 4;
-    BlockFeed feed;
-    Printer printer;
-    Playfield playfield;
+    private BlockFeed feed;
+    private Printer printer;
+    private Playfield playfield;
 
     private static Object[][] helpProvider(Move move) {
         return IntStream.range(1, cols / 4).boxed().map(i -> new Object[]{i, move}).toArray(Object[][]::new);

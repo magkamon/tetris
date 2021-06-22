@@ -6,15 +6,12 @@
 
     <groupId>com.epam.prejap</groupId>
     <artifactId>tetris</artifactId>
-    <version>0.11</version>
+    <version>0.10</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        <jnativehook.version>2.0.2</jnativehook.version>
-        <testng.version>7.4.0</testng.version>
-        <maven.assembly.plugin.version>3.3.0</maven.assembly.plugin.version>
         <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
         <main.class>com.epam.prejap.tetris.Tetris</main.class>
         <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
@@ -26,6 +23,9 @@
             Example: maven-jar-plugin -> maven.jar.plugin.version
             Order of appearance: alphabetical
         -->
+        <jnativehook.version>2.0.2</jnativehook.version>
+        <testng.version>7.4.0</testng.version>
+        <maven.assembly.plugin.version>3.3.0</maven.assembly.plugin.version>
     </properties>
 
     <dependencies>
