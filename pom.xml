@@ -21,6 +21,11 @@
         <test.jar.file.location>
             ${project.build.directory}${file.separator}${project.build.finalName}.jar
         </test.jar.file.location>
+        <!--
+            Please use this naming convention for plugin and dependency versions: <artifactId.version>
+            Example: maven-jar-plugin -> maven.jar.plugin.version
+            Order of appearance: alphabetical
+        -->
     </properties>
 
     <dependencies>
