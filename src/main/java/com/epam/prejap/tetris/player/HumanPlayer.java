@@ -30,10 +30,9 @@ import java.util.logging.Level;
 import static java.util.logging.Logger.getLogger;
 
 /**
- * @author Radosław Piwowarski
- * @version 1.0
- * @see <a href="https://github.com/kwhat/jnativehook">JNativeHook</a>
  * Capture keyboard input with JNativeHook and generate movement based on keystrokes.
+ * @author Radosław Piwowarski
+ * @see <a href="https://github.com/kwhat/jnativehook">JNativeHook</a>
  * @see Player
  */
 public class HumanPlayer implements Player, NativeKeyListener {
@@ -105,7 +104,7 @@ public class HumanPlayer implements Player, NativeKeyListener {
     @Override
     public void nativeKeyPressed(NativeKeyEvent nativeKeyEvent) {
         /*
-         * Not need to distinguish between pressed/released/typed
+         * No need to distinguish between pressed/released/typed
          */
     }
 
@@ -115,7 +114,7 @@ public class HumanPlayer implements Player, NativeKeyListener {
     @Override
     public void nativeKeyReleased(NativeKeyEvent nativeKeyEvent) {
         /*
-         * Not need to distinguish between pressed/released/typed
+         * No need to distinguish between pressed/released/typed
          */
     }
 }
