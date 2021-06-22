@@ -3,11 +3,17 @@ package com.epam.prejap.tetris.block;
 /**
  * Stands for "U" Block in Tetris game
  * @author Magdalena Kamoń
- * @see BlockFeed
  */
-
 final class UBlock extends Block {
 
+    /**
+     * Byte array represents "U" block.
+     * In game will be displayed as (between lines):
+     *  -------------------
+     *      # #
+     *      ###
+     *  -------------------
+     */
     private static final byte[][] IMAGE = {
             {1, 0, 1},
             {1, 1, 1},
