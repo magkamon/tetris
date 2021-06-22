@@ -11,9 +11,6 @@ import java.util.stream.Stream;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-/**
- * @author Radosław Piwowarski
- */
 @Test(groups = {"TestPlayfieldAndHumanPlayer"})
 public class TestPlayfield {
 
@@ -45,7 +42,7 @@ public class TestPlayfield {
     }
 
     /**
-     * Tests if calling moving methods let us move the block.
+     * Tests if calling moving methods lets us move the block.
      * Direct call to move block after it touches the wall causes IndexOutOfBoundsException
      * Direct position checking is not possible, grid is private.
      * Because of different size of blocks, check only up to quarter of number of columns
@@ -60,10 +57,6 @@ public class TestPlayfield {
         assertTrue(moved, "Move of %d, to side %s".formatted(move, side));
     }
 
-    /**
-     * Check if after moving to the bottom player can still move to left or right
-     * Result should be false
-     */
     public void testMoveWithMoveToBottom() {
         playfield.nextBlock();
         assertFalse(playfield.move(Move.TO_BOTTOM_NOW));

@@ -10,9 +10,6 @@ import java.util.stream.IntStream;
 
 import static org.testng.Assert.*;
 
-/**
- * @author Radoslaw Piwowarski
- */
 @Test(groups = {"TestPlayfieldAndHumanPlayer"})
 public class TestHumanPlayer {
 

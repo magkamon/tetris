@@ -24,7 +24,7 @@
             <class name="com.epam.prejap.tetris.JARArchiveIT"/>
         </classes>
     </test>
-    <test name="TestPlayfieldAndHumanPlayer">
+    <test name="Test playfield and human player">
         <groups>
             <run>
                 <include name="Playfield"/>
