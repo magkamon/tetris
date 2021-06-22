@@ -45,7 +45,7 @@ public class TestPlayfield {
      * Tests if calling moving methods lets us move the block.
      * Direct call to move block after it touches the wall causes IndexOutOfBoundsException
      * Direct position checking is not possible, grid is private.
-     * Because of different size of blocks, check only up to quarter of number of columns
+     * Because of different size of blocks, checks only up to quarter of number of columns
      */
     @Test(dataProvider = "provideAcceptableMoves")
     public void testAcceptableMovement(int move, Move side) {
@@ -57,7 +57,7 @@ public class TestPlayfield {
         assertTrue(moved, "Move of %d, to side %s".formatted(move, side));
     }
 
-    public void testMoveWithMoveToBottom() {
+    public void afterMovingToBottomWeCannotMoveAnymore() {
         playfield.nextBlock();
         assertFalse(playfield.move(Move.TO_BOTTOM_NOW));
     }
