@@ -77,6 +77,7 @@ NOT HERE, NOT IN YOUR LOCAL REPOSITORY.
 1. Every added and meaningful Javadoc is worth 1 point.
 
 
-## This project relays on 3rd-party libraries: 
-- JNativeHook version 2.0.2. Library responsible for capturing native input events: keystrokes.
-  https://github.com/kwhat/jnativehook
+## License
+Project is distributed under GNU Lesser General Public license.
+Current GNU-licensed dependency is JNativeHook.
+License may be changed in a future by any valid reason.
