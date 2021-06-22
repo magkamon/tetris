@@ -12,9 +12,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        <version.jnativehook>2.0.2</version.jnativehook>
-        <version.testng>7.4.0</version.testng>
-        <version.maven.assembly.plugin>3.3.0</version.maven.assembly.plugin>
+        <jnativehook.version>2.0.2</jnativehook.version>
+        <testng.version>7.4.0</testng.version>
+        <maven.assembly.plugin.version>3.3.0</maven.assembly.plugin.version>
         <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
         <main.class>com.epam.prejap.tetris.Tetris</main.class>
         <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
@@ -27,14 +27,14 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>${version.testng}</version>
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.1stleg/jnativehook -->
         <dependency>
             <groupId>com.1stleg</groupId>
             <artifactId>jnativehook</artifactId>
-            <version>${version.jnativehook}</version>
+            <version>${jnativehook.version}</version>
         </dependency>
     </dependencies>
 
@@ -43,7 +43,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>${version.maven.assembly.plugin}</version>
+                <version>${maven.assembly.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>make-assembly</id>
