@@ -5,10 +5,10 @@ import com.epam.prejap.tetris.game.Move;
 import com.epam.prejap.tetris.game.Playfield;
 import com.epam.prejap.tetris.game.Printer;
 import com.epam.prejap.tetris.game.Waiter;
+import com.epam.prejap.tetris.logger.Logger;
 import com.epam.prejap.tetris.player.HumanPlayer;
 import com.epam.prejap.tetris.player.Player;
 import com.epam.prejap.tetris.player.RandomPlayer;
-import org.tinylog.Logger;
 
 class Tetris {
     private final Playfield playfield;
