@@ -10,49 +10,51 @@ import com.epam.prejap.tetris.player.HumanPlayer;
 import com.epam.prejap.tetris.player.Player;
 import com.epam.prejap.tetris.player.RandomPlayer;
 
+
 class Tetris {
     private final Playfield playfield;
     private final Waiter waiter;
     private final Player player;
+    private static final Logger LOGGER = Logger.getLogger(Tetris.class);
 
     public Tetris(Playfield playfield, Waiter waiter, Player player) {
         this.playfield = playfield;
         this.waiter = waiter;
         this.player = player;
-        Logger.trace("New {} is created", getClass().getSimpleName());
+        LOGGER.trace("New {} is created", getClass().getSimpleName());
     }
 
     public Score play() {
-        Logger.info("Game was started");
+        LOGGER.info("Game was started");
         boolean moved;
         int score = 0;
-        Logger.debug("Initial score is: {}", score);
+        LOGGER.debug("Initial score is: {}", score);
         do {
-            Logger.trace("Adding new block to the playfield");
+            LOGGER.trace("Adding new block to the playfield");
             moved = false;
 
             playfield.nextBlock();
             score++;
-            Logger.debug("Score updated to: {}", score);
+            LOGGER.debug("Score updated to: {}", score);
 
             boolean nextMove;
             do {
                 waiter.waitForIt();
-                Logger.trace("Next move");
+                LOGGER.trace("Next move");
                 Move move = player.nextMove()
                         .orElse(Move.NONE);
-                Logger.trace("Next side to move the block: {}", move);
+                LOGGER.trace("Next side to move the block: {}", move);
                 moved |= (nextMove = playfield.move(move));
                 if (move == Move.TO_BOTTOM_NOW) {
                     moved = true;
                 }
-                Logger.trace("The game continues: {}", moved);
+                LOGGER.trace("The game continues: {}", moved);
             } while (nextMove);
             playfield.findAndRemoveFilledLines();
-            Logger.trace("This block cannot be moved anymore");
-            Logger.trace("There is a place for a new block: {}", moved);
+            LOGGER.trace("This block cannot be moved anymore");
+            LOGGER.trace("There is a place for a new block: {}", moved);
         } while (moved);
-        Logger.info("Game ended with score: {}", score);
+        LOGGER.info("Game ended with score: {}", score);
 
         if (player instanceof HumanPlayer)
             ((HumanPlayer) player).killHumanPlayer();
@@ -65,13 +67,13 @@ class Tetris {
         int rows = parameters.getRows();
         int cols = parameters.getCols();
         int delay = parameters.getDelay();
-        Logger.info("Starting the game with {} rows, {} columns, and a delay of {}ms", rows, cols, delay);
+        LOGGER.info("Starting the game with {} rows, {} columns, and a delay of {}ms", rows, cols, delay);
 
         Player player = new RandomPlayer();
         if (args.length > 0 && args[0].contains("human"))
             player = new HumanPlayer();
 
-        Logger.info("The game will be played by {}", player.getClass()
+        LOGGER.info("The game will be played by {}", player.getClass()
                 .getSimpleName());
 
         var feed = new BlockFeed();
@@ -80,8 +82,8 @@ class Tetris {
         var game = new Tetris(playfield, new Waiter(delay), player);
 
         var score = game.play();
-        Logger.trace("Printing the score");
+        LOGGER.trace("Printing the score");
         System.out.println("Score: " + score.points());
-        Logger.info("Exiting te game.");
+        LOGGER.info("Exiting te game.");
     }
 }
