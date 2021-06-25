@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import java.util.Iterator;
 
+import static java.lang.String.format;
 import static org.testng.Assert.assertEquals;
 
 /**
@@ -34,17 +35,17 @@ public class BlocksShapesTest {
 
     public void shouldBeRightQtOfRows() {
         assertEquals(block.rows(), image.length,
-                String.format("%s: Nr of rows for is incorrect.", block.getClass().getSimpleName()));
+                format("%s: Nr of rows for is incorrect.", block.getClass().getSimpleName()));
     }
 
     public void shouldBeRightQtOfColumns() {
         assertEquals(block.cols(), image[0].length,
-                String.format("%s: Nr of columns for is incorrect.", block.getClass().getSimpleName()));
+                format("%s: Nr of columns for is incorrect.", block.getClass().getSimpleName()));
     }
 
     @Test(dataProvider = "dotAtData", dependsOnMethods = {"shouldBeRightQtOfRows", "shouldBeRightQtOfColumns"})
     public void shouldReturnRightBytesFromDotAtMethod(int i, int j, byte expectedDot) {
         assertEquals(block.dotAt(i, j), expectedDot,
-                String.format("%s: incorrect dotAt(%s, %s)", block.getClass().getSimpleName(), i, j));
+                format("%s: incorrect dotAt(%s, %s)", block.getClass().getSimpleName(), i, j));
     }
 }

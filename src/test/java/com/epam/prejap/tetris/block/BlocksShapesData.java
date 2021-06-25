@@ -41,6 +41,10 @@ public class BlocksShapesData {
                 {1, 1, 1},
                 {0, 1, 0}
         });
+        put(UBlock::new, new byte[][]{
+                {1, 0, 1},
+                {1, 1, 1}
+        });
         put(YBlock::new, new byte[][]{
                 {1, 0, 1},
                 {0, 1, 0},
