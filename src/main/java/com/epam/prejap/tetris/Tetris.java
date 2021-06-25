@@ -21,7 +21,7 @@ class Tetris {
         this.playfield = playfield;
         this.waiter = waiter;
         this.player = player;
-        LOGGER.trace("New {} is created", getClass().getSimpleName());
+        LOGGER.trace("New {} object is created", getClass().getSimpleName());
     }
 
     public Score play() {
@@ -84,6 +84,6 @@ class Tetris {
         var score = game.play();
         LOGGER.trace("Printing the score");
         System.out.println("Score: " + score.points());
-        LOGGER.info("Exiting te game.");
+        LOGGER.info("Exiting te game");
     }
 }
