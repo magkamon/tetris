@@ -6,7 +6,7 @@
 
     <groupId>com.epam.prejap</groupId>
     <artifactId>tetris</artifactId>
-    <version>0.13</version>
+    <version>0.14</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,11 +22,10 @@
             Order of appearance: alphabetical
         -->
         <jnativehook.version>2.0.2</jnativehook.version>
-        <systemlambda.version>1.2.0</systemlambda.version>
-        <testng.version>7.4.0</testng.version>
         <maven.assembly.plugin.version>3.3.0</maven.assembly.plugin.version>
         <mockito.version>3.11.2</mockito.version>
         <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
+        <system.lambda.version>1.2.0</system.lambda.version>
         <testng.version>7.4.0</testng.version>
         <tinylog.version>2.3.2</tinylog.version>
     </properties>
@@ -41,7 +40,7 @@
         <dependency>
             <groupId>com.github.stefanbirkner</groupId>
             <artifactId>system-lambda</artifactId>
-            <version>${systemlambda.version}</version>
+            <version>${system.lambda.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.1stleg/jnativehook -->
